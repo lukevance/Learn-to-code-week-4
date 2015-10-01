@@ -3,8 +3,26 @@
 <head>
 <title>Graham McBain's amazing Javascript!</title>
 <link id="pagestyle" rel="stylesheet" type="text/css" href="css/demo.css">
-</head>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script	src="js/jquery.smint.js" type="text/javascript" ></script>
+<script type="text/javascript">
 
+//Once the page is loaded(or the html"document" is "ready") the browser will
+// execute this javascript function.
+$(document).ready( function() {
+	//The "smint" plugin extendts the subMenu class and has a
+    $('.subMenu').smint({
+    	'scrollSpeed' : 500
+    });
+});
+
+function swapStyleSheet(sheet){
+	document.getElementById('pagestyle').setAttribute('href', sheet);
+}
+
+</script>
+
+</head>
 
 <body>
 <div class="wrap ">
@@ -30,6 +48,9 @@
 	<div class="section s1">
 		<div class="inner ">
 			<h1>Lets Change the Style Sheets!</h1>
+
+				<button onclick="swapStyleSheet('css/terrible.css')">Shitty Style Sheet</button>
+				<button onclick="swapStyleSheet('css/demo.css')">Original Sheet</button>
 
 		</div>
 	</div>
@@ -68,6 +89,7 @@
 			<p><a href="www.postinowinecafe.com">Postino Wine Cafe</a> just opened in LoHi!</p>
 		</div>
 	</div>
+
 
 
 </div>
